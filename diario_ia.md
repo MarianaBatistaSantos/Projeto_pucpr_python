@@ -67,3 +67,71 @@ O for percorre elementos diretamente, sem precisar de contador manual.
  A resposta atribuida ao diário foi resumida, a orginal continha diversos exemplos em múltiplas situações, separas em níveis, desde o básico até o profissional, prontas para serem executadas com um terminal do CHATGPT. Honestamente, foi muito útil para mim, pois tenho facilidade em aprender com exemplos, logo, foi reforçado um conceito que tenho certeza de que utilizarei no meu desenvolvimento. 
 
  Um ponto negativo do uso da AI foi que deixe explicitamente a busca no site oficial do PYTHON como fonte de dados, algo que a IA não fez. Porém, entendo que um desenvolvimento melhor do meu PROMPT poderia resolver, sendo sempre importante conferir as informações em sites de confinça.
+
+
+
+
+
+# Diário de Bordo de IA - Mariana Batista dos Santos 
+
+## 2026/04/10
+
+### Dificuldade encontrada 
+O código não estava salvando os projetos dentro da lista
+
+### Prompt enviado para a IA 
+Eu gostaria que você explicasse o motivo do meu código não estar armazenando os projetos na lista projetos. (envieio meu código)
+
+### Resposta da IA (Resumo) 
+🔴 Onde está o erro?
+
+Dentro do comando "ADD", você fez isso:
+
+lista = []
+na_lista = nome_projeto and nome + 1
+lista.append(na_lista)
+
+Problemas aqui:
+Você criou uma lista nova (lista = []) a cada loop
+Ou seja, ela é apagada a cada iteração
+E pior: não tem relação nenhuma com projetos
+Você nunca usa projetos.append(...)
+A lista principal (projetos) continua vazia o tempo todo
+
+Essa linha está errada logicamente:
+
+na_lista = nome_projeto and nome + 1
+
+Isso não cria um "registro" do projeto.
+Em Python, isso vai retornar só nome + 1 se nome_projeto não for vazio.
+
+### Minha análise e aprendizado
+Bom, eu creio que o erro no código foi ocasionado pela minha falta de atenção, e por ter passado dias sem trabalhar minhas habilidades como programadora, tenho total consciência de que caso eu queira evoluir nas minhas habilidades, eu devo treinar todos os dias SEM FALTA!
+
+O que estava de fato errado era que eu criei uma lista desnecessária (mesmo assim o código iria funcionar) e que ao direcionar os projetos à lista fora do loop, eu estava direcionando à lista errada que estava dentro do loop.
+
+
+while True:
+        try:
+            numero_projetos = int(input("Quantos projetos gostaria de cadastrar? "))
+        except ValueError:
+            print("Você deve utilizar números, ex: 1,2,3...")
+            break
+
+        finally:
+
+            if numero_projetos <= 0:
+                print("Não é possível cadastrar um número negativo ou zero projetos.")
+                print("Voltando ao menu...")
+                print("-" * 100)
+            else: 
+                for nome in range(numero_projetos):
+                    nome_projeto = input(f"Digite o nome do projeto {nome + 1}: ")
+                    projetos.append(nome_projeto)
+                    print(f"Projeto '{nome_projeto}' cadastrado com sucesso!")
+                print("-" * 100)
+
+            if numero_projetos == numero_projetos:
+                print("Todos os projetos foram cadastrados!")
+                print("Voltando ao menu...")
+        print("-" * 100)
