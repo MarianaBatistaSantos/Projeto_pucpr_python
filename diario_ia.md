@@ -110,28 +110,3 @@ Bom, eu creio que o erro no código foi ocasionado pela minha falta de atenção
 
 O que estava de fato errado era que eu criei uma lista desnecessária (mesmo assim o código iria funcionar) e que ao direcionar os projetos à lista fora do loop, eu estava direcionando à lista errada que estava dentro do loop.
 
-
-while True:
-        try:
-            numero_projetos = int(input("Quantos projetos gostaria de cadastrar? "))
-        except ValueError:
-            print("Você deve utilizar números, ex: 1,2,3...")
-            break
-
-        finally:
-
-            if numero_projetos <= 0:
-                print("Não é possível cadastrar um número negativo ou zero projetos.")
-                print("Voltando ao menu...")
-                print("-" * 100)
-            else: 
-                for nome in range(numero_projetos):
-                    nome_projeto = input(f"Digite o nome do projeto {nome + 1}: ")
-                    projetos.append(nome_projeto)
-                    print(f"Projeto '{nome_projeto}' cadastrado com sucesso!")
-                print("-" * 100)
-
-            if numero_projetos == numero_projetos:
-                print("Todos os projetos foram cadastrados!")
-                print("Voltando ao menu...")
-        print("-" * 100)
