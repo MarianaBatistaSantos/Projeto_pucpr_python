@@ -6,6 +6,7 @@
 Atualmente, minha dificuldade foi em relação ao uso do comando `for`
 
 ### Prompt enviado para a IA 
+A AI utilizada foi: ChatGPT
 Estou com dificuldade em relação à funcionalidade, uso e aplicação do comando `for` da linguagem PYTHON. Me explique detalhadamente o uso deste comando, usando exemplos e analogias, me mostre a maioria dos possíveis usos também. (Use a própria documentação do PYTHON como fonte)
 
 ### Resposta da IA (Resumo) 
@@ -80,6 +81,7 @@ O for percorre elementos diretamente, sem precisar de contador manual.
 O código não estava salvando os projetos dentro da lista
 
 ### Prompt enviado para a IA 
+A AI utilizada foi: ChatGPT
 Eu gostaria que você explicasse o motivo do meu código não estar armazenando os projetos na lista projetos. (envieio meu código)
 
 ### Resposta da IA (Resumo) 
@@ -110,3 +112,28 @@ Bom, eu creio que o erro no código foi ocasionado pela minha falta de atenção
 
 O que estava de fato errado era que eu criei uma lista desnecessária (mesmo assim o código iria funcionar) e que ao direcionar os projetos à lista fora do loop, eu estava direcionando à lista errada que estava dentro do loop.
 
+
+# Diário de Bordo de IA - Mariana Batista dos Santos 
+
+## 2026/04/23
+
+### Dificuldade encontrada 
+Dificuldade ao implementar uma def no código, específicamente na tentativa de criar uma função para achar itens na lista principal
+
+### Prompt enviado para a IA 
+A AI utilizada foi: CLOUDE.IA
+eu preciso de ajuda com o meu código, mas eu não quero que você altere o meu código ou me dê código novo, preciso que me ajude a entender o que há de errado. 
+Me ajude a entender o motivo do update não estar funcionando direto com a minha implementação de def find_plantas
+### Resposta da IA (Resumo) 
+Resumindo o fluxo com erro:
+
+find_plantas(...) é chamada → percorre a lista → não retorna nada → devolve None
+Esse None é jogado fora
+atualizar_planta = planta pega a variável global planta, que é None
+O if atualizar_planta is not None: falha, e cai no else: "Planta não encontrada"
+
+### Minha análise e aprendizado
+Quando eu estava fazendo as def que não possuem parâmetros ou RETURN, eu acabei esquecendo da necessidade do uso do return. Eu retornei ao contéudo da semana 6 e reforcei o entendimento a funções, parâmetros e retornos. 
+
+### Observação: 
+Semana passada meu código estava com 170 linhas, agora com as funções foi para 130. USo de funções me ajudou muito com algumas tarefas repetitivas de copia e cola.
